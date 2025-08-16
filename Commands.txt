@@ -1,0 +1,19 @@
+Commands 
+
+Backend :
+First create a virtual enviorment: python -m venv ./venv
+Activate he venv: ./venv/Scripts/activate
+Decativate the venv: deactivate
+
+To install all the dependencies: pip install -r requirements.txt
+To create vectorstore : python backend/embeddings/embed.py
+fastapi startup: uvicorn backend.main:app --reload --port 8000
+ngrok command : ngrok http http://localhost:8000
+ 
+.env structure:
+
+TELEGRAM_BOT_TOKEN = token
+OPENROUTER_API_KEY = value
+WEBHOOK_URL = url/webhook
+
+Frontend: 
