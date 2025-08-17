@@ -1,4 +1,4 @@
-import ProductVideo from './img/ProductVideo.mp4'
+import ProductVideo from './img/Productvideo.mp4'
 export default function Video() {
   return (
     // <div className="flex justify-center items-center">
