@@ -3,7 +3,7 @@ import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI , Request
 from contextlib import asynccontextmanager
-from backend.chatbot import *
+from chatbot import *
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
 
