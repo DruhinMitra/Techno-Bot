@@ -6,8 +6,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains.retrieval_qa.base import RetrievalQA
  
-load_dotenv()
-Vector_path="D:\\TINT HACKATHON\\Techno-Buddy\\backend\\Vector_store"
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
+Vector_path="Techno-Bot\\backend\\Vector_store" #change Your directory here
 GEMINI_API_KEY=os.getenv("GEMINI_API_KEY") #using gemini key
 
 def vector_store():
@@ -31,11 +31,11 @@ def create_qa_chain():
         llm=ChatGoogleGenerativeAI(
 
 
-            model="gemibi-2.5-flash",
+            model="gemini-2.5-flash",
             api_key=GEMINI_API_KEY
 
         
-            ) #using Gemini
+        ) #using Gemini
 
         return RetrievalQA.from_chain_type(
             llm=llm,
@@ -43,7 +43,7 @@ def create_qa_chain():
             chain_type="stuff"
         )
     except Exception as e:
-        print("Cannot Load Vector Space")
+        print(f"Cannot Load Vector Space Exception {e}")
         return None
 
 

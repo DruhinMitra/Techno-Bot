@@ -4,13 +4,14 @@ from dotenv import load_dotenv
 from fastapi import FastAPI , Request
 from contextlib import asynccontextmanager
 from backend.chatbot import *
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
 
 WEBHOOK_URL=os.getenv("WEBHOOK_URL")
 TELEGRAM_BOT_TOKEN=os.getenv("TELEGRAM_BOT_TOKEN")
 BASE_TELEGRAM_URL=f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
-
+print(WEBHOOK_URL)
+print(TELEGRAM_BOT_TOKEN)
 @asynccontextmanager
 
 async def lifespan(app:FastAPI):
@@ -19,11 +20,13 @@ async def lifespan(app:FastAPI):
             f"{BASE_TELEGRAM_URL}/setWebhook",
             params={"url":WEBHOOK_URL}
         )
+        print(resp.status_code)
+        print(resp.text)
         if resp.status_code==200:
             print(f"Webhook set to {WEBHOOK_URL}")
 
         else:
-            print("Webhook didnt set")
+            pass
     
     yield
 

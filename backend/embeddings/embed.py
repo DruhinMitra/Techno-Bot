@@ -4,8 +4,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 
-DATA_PATH = "D:\\TINT HACKATHON\Techno-Buddy\\backend\\data"
-VECTORSTORE_PATH = "D:\\TINT HACKATHON\\Techno-Buddy\\backend\\Vector_store"
+DATA_PATH = "Techno-Bot\\backend\\data"
+VECTORSTORE_PATH = "Techno-Bot\\backend\\Vector_store"
 
 loaders = []
 for file in os.listdir(DATA_PATH):
