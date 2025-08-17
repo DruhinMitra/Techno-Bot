@@ -1,6 +1,6 @@
 import { Card, CardBody, Typography, Avatar } from "@material-tailwind/react";
 import Laptop_chat from './img/Laptop_chat.jpg'
-import Laptop_chat_2 from './img/Laptop_chat_2.jpg'
+import Laptop_chat_2 from './img/laptop_chat_2.jpg'
 import Mobile_chat from './img/Mobile_chat.jpg'
 
 export function FeatureSection() {
